@@ -1,10 +1,10 @@
 <?php
 /** @var InvoiceController $this */
 /** @var Invoice $model */
-//$this->breadcrumbs = array(
-//    'Invoices' => array('index'),
-//    Yii::t('app', 'Manage'),
-//);
+$this->breadcrumbs = array(
+    'Invoices' => array('index'),
+    Yii::t('app', 'Manage'),
+);
 //$this->menu = array(
 //    array('label' => Yii::t('app', 'List'), 'icon' => 'list', 'url' => array('index')),
 //    array('label' => Yii::t('app', 'Create'), 'icon' => 'plus', 'url' => array('create')),

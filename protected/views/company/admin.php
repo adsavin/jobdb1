@@ -24,7 +24,8 @@ $('.search-form form').submit(function(){
 
 <fieldset>
     <legend>
-        <?php echo Yii::t('app', 'Manage') ?> <?php echo Company::label(2) ?>    </legend>
+        <?php echo Yii::t('app', 'Manage') ?>
+    </legend>
 
     <?php echo CHtml::link('<i class="icon-search"></i> ' . Yii::t('app', 'Advanced Search'), '#', array('class' => 'search-button btn')) ?>
     <div class="search-form" style="display:none">

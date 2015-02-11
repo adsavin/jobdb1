@@ -65,9 +65,9 @@ for ($row = 0; $row < $itemRows; $row++) :
     <?php
 endfor;
 
-$this->widget('application.components.ColumnListView', array(
-    'dataProvider' => $dataProvider,
-    'itemView' => '_view',
-    'columns' => array("one", "two", "three", "four"),
-        )
-);
+//$this->widget('application.components.ColumnListView', array(
+//    'dataProvider' => $dataProvider,
+//    'itemView' => '_view',
+//    'columns' => array("one", "two", "three", "four"),
+//        )
+//);
