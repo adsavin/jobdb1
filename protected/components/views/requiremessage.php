@@ -1,0 +1,1 @@
+ <p class="note"><?php echo Yii::t('app','Please fill data in which marked as Asterisk'); ?> <span class="required">*</span></p>

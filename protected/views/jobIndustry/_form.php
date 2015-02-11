@@ -1,0 +1,38 @@
+<div class="form">
+    <?php
+    /** @var JobIndustryController $this */
+    /** @var JobIndustry $model */
+    /** @var AweActiveForm $form */
+    $form = $this->beginWidget('ext.AweCrud.components.AweActiveForm', array(
+        'id' => 'job-industry-form',
+        'enableAjaxValidation' => true,
+        'enableClientValidation' => false,
+    ));
+    ?>
+
+    <p class="note">
+        <?php echo Yii::t('app', 'Fields with') ?> <span class="required">*</span>
+        <?php echo Yii::t('app', 'are required') ?>.    </p>
+
+    <?php echo $form->errorSummary($model) ?>
+
+    <?php echo $form->textFieldRow($model, 'job_industry_name', array('class' => 'span5', 'maxlength' => 255)) ?>
+    <?php echo $form->textFieldRow($model, 'image', array('class' => 'span5', 'maxlength' => 255)) ?>
+    <div class="form-actions">
+        <?php
+        $this->widget('bootstrap.widgets.TbButton', array(
+            'buttonType' => 'submit',
+            'type' => 'primary',
+            'label' => $model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Save'),
+        ));
+        ?>
+        <?php
+        $this->widget('bootstrap.widgets.TbButton', array(
+            //'buttonType'=>'submit',
+            'label' => Yii::t('app', 'Cancel'),
+            'htmlOptions' => array('onclick' => 'javascript:history.go(-1)')
+        ));
+        ?>
+    </div>
+    <?php $this->endWidget(); ?>
+</div>
