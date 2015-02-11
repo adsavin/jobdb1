@@ -12,11 +12,11 @@ class QuatationController extends SBaseController {
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
-//    public function actionView($id) {
-//        $this->render('view', array(
-//            'model' => $this->loadModel($id),
-//        ));
-//    }
+    public function actionView() {
+        $this->render('view', array(
+            'INVOICE' => Common::model()->find("code=:code", array(":code" => "QUOTATION")),
+        ));
+    }
 
     /**
      * Creates a new model.
@@ -136,10 +136,19 @@ class QuatationController extends SBaseController {
             $output = array(
                 "price" => $model->price,
                 "discount" => $model->discount
-            );       
+            );
             echo json_encode($output);
         } else
             echo FALSE;
     }
 
+    public function actionPrint() {
+        $quotation = Yii::app()->session["quotation"];
+        if (isset($quotation)) {
+            $mPDF = Utils::setCommonPrint();
+            $mPDF->AddPage('P');
+            $mPDF->WriteHTML($quotation);
+            $mPDF->Output("quotation.pdf", 'D'); //D=Download
+        }
+    }
 }

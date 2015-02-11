@@ -20,11 +20,15 @@
         </div>
         <br>
         <div class="row-fluid"> 
+            <?= item("Quotation", "quatation/admin", "message31.png") ?>
             <?= item("Users", "user/admin", "profile29.png") ?>
             <?= item("Roles", "srbac/authitem/assign", "screwdriver26.png") ?>
             <?= item("Widgets", "widget/admin", "briefcase65.png") ?>
             <?= item("Provinces", "province/admin", "location68.png") ?>
-            <?= item("Coordinate", "coor/admin", "location67.png") ?>
+            <?= item("Coordinate", "coor/admin", "location67.png") ?>            
+        </div>
+        <br>
+        <div class="row-fluid">
             <?= item("Sing Out", "site/logout", "power.png") ?>
         </div>
         <?php
@@ -48,7 +52,7 @@
             <?= item("Industry", "jobIndustry/admin", "medal1.png") ?>
             <?= item("CV", "cv/admin", "notes27.png") ?>
             <?= item("Invoice", "invoice/admin", "notes26.png") ?>
-            <?= item("Report", "report/admin", "chart47.png") ?>            
+            <?= item("Report", "publish/admin", "chart47.png") ?>            
         </div>
         <br>
         <div class="row-fluid">
