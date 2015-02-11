@@ -21,6 +21,7 @@
  * @property integer $no_of_position
  * @property integer $net_total
  * @property integer $priceperweek
+ * @property string $note
  *
  * @property Company $company
  * @property User $user
@@ -46,8 +47,9 @@ abstract class BaseInvoice extends AweActiveRecord {
             array('user_id, discount, total, company_id, no_of_week, no_of_position, net_total, priceperweek', 'numerical', 'integerOnly'=>true),
             array('no', 'length', 'max'=>255),
             array('payment_status', 'length', 'max'=>8),
-            array('payment_status, discount', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, no, created_date, user_id, payment_status, discount, total, company_id, no_of_week, no_of_position, net_total, priceperweek', 'safe', 'on'=>'search'),
+            array('note', 'safe'),
+            array('payment_status, discount, note', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, no, created_date, user_id, payment_status, discount, total, company_id, no_of_week, no_of_position, net_total, priceperweek, note', 'safe', 'on'=>'search'),
         );
     }
 
@@ -76,6 +78,7 @@ abstract class BaseInvoice extends AweActiveRecord {
                 'no_of_position' => Yii::t('app', 'No Of Position'),
                 'net_total' => Yii::t('app', 'Net Total'),
                 'priceperweek' => Yii::t('app', 'Priceperweek'),
+                'note' => Yii::t('app', 'Note'),
                 'company' => null,
                 'user' => null,
                 'publishes' => null,
@@ -97,6 +100,7 @@ abstract class BaseInvoice extends AweActiveRecord {
         $criteria->compare('no_of_position', $this->no_of_position);
         $criteria->compare('net_total', $this->net_total);
         $criteria->compare('priceperweek', $this->priceperweek);
+        $criteria->compare('note', $this->note, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

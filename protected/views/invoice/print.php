@@ -10,7 +10,9 @@
         $INVOICE->content = str_replace('$company_name', $model->company->name, $INVOICE->content);
         $INVOICE->content = str_replace('$company_address', $model->company->address, $INVOICE->content);
         $INVOICE->content = str_replace('$company_telephone', $model->company->telelphone, $INVOICE->content);
-        $INVOICE->content = str_replace('$company_email', $model->company->email    , $INVOICE->content);
+        $INVOICE->content = str_replace('$company_email', $model->company->email , $INVOICE->content);
+        $INVOICE->content = str_replace('$note', $model->note , $INVOICE->content);
+        
         $INVOICE->content = str_replace('$table', $this->renderPartial("table", array("model" => $model), TRUE), $INVOICE->content);
 
         echo $INVOICE->content;

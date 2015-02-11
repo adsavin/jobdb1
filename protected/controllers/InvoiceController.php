@@ -188,7 +188,7 @@ class InvoiceController extends SBaseController {
             $mPDF = Utils::setCommonPrint();
             $mPDF->AddPage('P');
             $mPDF->WriteHTML($invoice);
-            $mPDF->Output("report1.pdf", 'I'); //D=Download
+            $mPDF->Output("invoice.pdf", 'D'); //D=Download
         }
     }
 

@@ -29,5 +29,7 @@ $this->widget('bootstrap.widgets.TbListView', array(
     'dataProvider' => $dataProvider,
     'itemView' => '_view_job',
     "summaryText" => FALSE,
+    "htmlOptions" => array(
+//        "class" => "span8"
+    )
 ));
-?>

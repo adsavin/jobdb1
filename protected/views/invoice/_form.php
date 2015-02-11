@@ -162,7 +162,20 @@
             </div>
             <div class="row-fluid">
                 <label class="control-label" for="Invoice_payment_status">Payment Status: </label>
-                <?php echo $form->dropDownList($model, 'payment_status', Utils::enumItem($model, 'payment_status'), array('class' => 'span3')); ?>                    
+                <?php
+                echo $form->dropDownList($model, 'payment_status', Utils::enumItem($model, 'payment_status'), array(
+                    'class' => 'span3'
+                ));
+                ?>                    
+            </div>
+            <div class="row-fluid" style="margin-top: 10px;">
+                <label class="control-label" for="Invoice_note">Note: </label>
+                <?php
+                echo $form->textArea($model, 'note', array(
+                    'class' => 'span3',
+                    'rows' => "4",
+                ));
+                ?>                    
             </div>
         </div>
     </div>
@@ -184,7 +197,7 @@
         ));
         ?>
     </div>
-    <?php $this->endWidget(); ?>
+<?php $this->endWidget(); ?>
 </div>
 <?php
 Yii::app()->clientScript->registerScript('suminvoice', "
