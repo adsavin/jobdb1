@@ -9,6 +9,7 @@
 $this->menu = array(
     array('label' => Yii::t('app', 'List'), 'icon' => 'list', 'url' => array('index')),
     array('label' => Yii::t('app', 'Create'), 'icon' => 'plus', 'url' => array('create')),
+    array('label' => Yii::t('app', 'View'), 'icon' => 'search', 'url' => array('view')),
 );
 ?>
 
